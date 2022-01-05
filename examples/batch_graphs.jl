@@ -3,26 +3,8 @@
 #   The GISSMO server might be blocking you for downloading so many entries.
 #   This script will skip downloading entries that were already downloaded.
 
-import Unicode
-import FileIO
-import Random
-import Printf
-import PyCall
-import PyPlot
 
-#import Utilities
-
-import JLD
-import InfoZIP
-
-#using MolecularGraph
-
-import Plots
-Plots.plotly()
-
-import HTTP
-import JSON3
-
+import GISSMOReader
 import DelimitedFiles
 
 include("../src/database/helpers.jl")
@@ -34,11 +16,6 @@ include("../src/assemble.jl")
 include("../src/utils.jl")
 #include("../src/coupling/parse2.jl")
 
-
-PyPlot.close("all")
-fig_num = 1
-
-Random.seed!(25)
 
 
 entries = getGISSMOentriesall()
