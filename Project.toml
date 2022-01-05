@@ -3,11 +3,17 @@ uuid = "fab8f492-3bcc-4cb4-9708-3e824b5a8279"
 authors = ["Roy <rwang013@uottawa.ca> and contributors"]
 version = "0.1.0"
 
-[extras]
-Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+[deps]
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+InfoZIP = "f4508453-b816-52ab-a864-26fc7f6211fc"
+JLD = "4138dd39-2aa7-5051-a626-17a0bb65d9c8"
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
 
 [compat]
 julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
 test = ["Test"]
