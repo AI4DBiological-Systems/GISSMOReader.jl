@@ -5,20 +5,13 @@
 
 
 import GISSMOReader
-import DelimitedFiles
+#import DelimitedFiles
 
-include("../src/database/helpers.jl")
-include("../src/database/GISSMO_entries.jl")
-include("../src/database/metadata.jl")
-
-
-include("../src/assemble.jl")
-include("../src/utils.jl")
 #include("../src/coupling/parse2.jl")
 
 
 
-entries = getGISSMOentriesall()
+entries = GISSMOReader.getGISSMOentriesall()
 #entries = getGISSMOentries(["L-Lysine";])
 
 # storage for the experiment 1D 1H files.
@@ -29,17 +22,12 @@ base_dir = "/home/roy/del/base"
 #save_dir = "/home/roy/MEGAsync/inputs/NMR/molecules/"
 save_dir = "/home/roy/del/save/"
 
-# image size in pixels.
-canvas_size = (500,500)
-
 δ_lb = 0.1
 δ_ub = 0.1
-
 unique_cs_tol = 1e-6
 
 
-
-downloadGISSMOentries(entries,
+GISSMOReader.downloadGISSMOentries(entries,
 base_dir,
 save_dir;
 δ_lb = δ_lb,

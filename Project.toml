@@ -8,6 +8,7 @@ HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 InfoZIP = "f4508453-b816-52ab-a864-26fc7f6211fc"
 JLD = "4138dd39-2aa7-5051-a626-17a0bb65d9c8"
 JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+Unicode = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 
 [compat]
 julia = "1"

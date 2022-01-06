@@ -1,5 +1,6 @@
 module GISSMOReader
 
+import Unicode
 import JLD
 import InfoZIP
 
