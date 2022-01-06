@@ -19,7 +19,7 @@ entries = GISSMOReader.getGISSMOentriesall()
 base_dir = "/home/roy/del/base"
 
 # storage for the extract J-coupling and chemical shift values, stored in a JLD file per GISSMO entry.
-#save_dir = "/home/roy/MEGAsync/inputs/NMR/molecules/"
+save_dir = "/home/roy/MEGAsync/inputs/NMR/molecules/"
 
 
 δ_lb = 0.1

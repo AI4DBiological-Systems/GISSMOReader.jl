@@ -687,7 +687,7 @@ end
 function specialsingletentry(  entry,
                     molecule_name,
                     base_dir::String,
-                    save_dit::String,
+                    save_dir::String,
                     singlet_ppm;
                     unique_cs_tol = 1e-6,
                     δ_lb = 0.1,
