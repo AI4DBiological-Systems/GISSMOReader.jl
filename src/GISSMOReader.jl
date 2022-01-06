@@ -13,6 +13,7 @@ include("../src/database/BMRB_rest.jl")
 include("../src/database/GISSMO_entries.jl")
 include("../src/database/metadata.jl")
 
+include("../src/assemble.jl")
 include("../src/utils.jl")
 
 end
