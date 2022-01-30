@@ -1,6 +1,7 @@
 
 # run this before graphs.jl and rest.jl variants.
 
+#include("../src/GISSMOReader.jl")
 import GISSMOReader
 import JLD
 
@@ -10,8 +11,7 @@ GISSMO_entries = GISSMOReader.extractfields(tmp, "entry")
 molecule_names = GISSMOReader.extractfields(tmp, "molecule_name")
 
 # save foldder.
-#base_dir = "/home/roy/MEGAsync/data/molecules"
-base_dir = "/home/roy/del/base"
+base_dir = "/home/roy/Documents/repo/NMRData/src/input/GISSMO_data"
 
 molar_masses = collect( GISSMOReader.fetchentrymetadata(GISSMO_entries[i])[1] for i = 1:length( GISSMO_entries))
 

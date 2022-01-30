@@ -4,6 +4,7 @@
 #   This script will skip downloading entries that were already downloaded.
 
 
+#include("../src/GISSMOReader.jl")
 import GISSMOReader
 #import DelimitedFiles
 
@@ -16,10 +17,10 @@ entries = GISSMOReader.getGISSMOentriesall()
 
 # storage for the experiment 1D 1H files.
 #base_dir = "/home/roy/MEGAsync/data/molecules"
-base_dir = "/home/roy/del/base"
+base_dir = "/home/roy/Documents/repo/NMRData/src/input/GISSMO_data/"
 
 # storage for the extract J-coupling and chemical shift values, stored in a JLD file per GISSMO entry.
-save_dir = "/home/roy/MEGAsync/inputs/NMR/molecules/"
+save_dir = "/home/roy/Documents/repo/NMRData/src/input/molecules/"
 
 
 δ_lb = 0.1

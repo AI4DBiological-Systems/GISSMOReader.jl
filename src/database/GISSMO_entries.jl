@@ -8,14 +8,14 @@ mutable struct GISSMOEntryType{}
     eDATA_URL::String # includes FID data, cs, J-coupling values.
     STAR_URL::String # contains concentration info.
 
-    κ_range
+    #κ_range
     # each row corresponds to a spin_group.
     # each consecutive pairs of columns correspond to the start
     #   and end of an interval for an unique κ.
     # a negative number means the entire spin group has one κ.
     # see cs_config.txt to help visualize κ_range.
 
-    ι_range::Vector{Tuple{Float64,Float64}}
+    #ι_range::Vector{Tuple{Float64,Float64}}
     #N_protons::Int
 end
 # TODO update graphs and batch_graphs to pull concentration data from STAR_URL.
@@ -28,25 +28,19 @@ function getGISSMOentriesall()::Vector{GISSMOEntryType}
     tmp = GISSMOEntryType("bmse000795",
         "DSS",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000795/simulation_1/bmse000795_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000795/simulation_1/bmse000795-simulation_1.str",
-        ((-1.2),(-1.2)),
-        [(-0.2, 3.1);] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000795/simulation_1/bmse000795-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000051",
         "L-Tyrosine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000051/simulation_1/bmse000051_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000051/simulation_1/bmse000051-simulation_1.str",
-        ((-1.2),(-1.2)),
-        [(2.5, 3.6); (6.4, 7.2)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000051/simulation_1/bmse000051-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000042",
         "L-Leucine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000042/simulation_1/bmse000042_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000042/simulation_1/bmse000042-simulation_1.str",
-        ((0.7, 1.3, 2.5, 3.9),),
-        [(2.5, 3.6); (6.4, 7.2)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000042/simulation_1/bmse000042-simulation_1.str")
     push!(entries, tmp)
 
     # tmp = GISSMOEntryType("bmse000089",
@@ -57,33 +51,25 @@ function getGISSMOentriesall()::Vector{GISSMOEntryType}
     tmp = GISSMOEntryType("bmse000977",
         "Glycine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000977/simulation_1/bmse000977_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000977/simulation_1/bmse000977-simulation_1.str",
-        ((-1.2),),
-        [(3.3, 3.7);] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000977/simulation_1/bmse000977-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000041",
         "L-Isoleucine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000041/simulation_1/bmse000041_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000041/simulation_1/bmse000041-simulation_1.str",
-        ((0.8, 1.65, 3.0, 3.8),),
-        [(0.8, 3.8);] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000041/simulation_1/bmse000041-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000860",
         "L-Valine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000860/simulation_1/bmse000860_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000860/simulation_1/bmse000860-simulation_1.str",
-        ((0.7, 1.5, 2.8, 3.7),),
-        [(0.7, 3.7);] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000860/simulation_1/bmse000860-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000050",
         "L-Tryptophan",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000050/simulation_1/bmse000050_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000050/simulation_1/bmse000050-simulation_1.str",
-        ((-1.2),(-1.2),(-1.2)),
-        [(3.0, 4.2); (6.9, 8.0)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000050/simulation_1/bmse000050-simulation_1.str")
     push!(entries, tmp)
 
     # tmp = GISSMOEntryType("bmse000049",
@@ -95,66 +81,50 @@ function getGISSMOentriesall()::Vector{GISSMOEntryType}
     tmp = GISSMOEntryType("bmse000859",
         "L-Threonine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000859/simulation_1/bmse000859_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000859/simulation_1/bmse000859-simulation_1.str",
-        ((0.9, 2.2, 4.4),),
-        [(1.1, 1.5); (3.4, 4.4)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000859/simulation_1/bmse000859-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000867",
         "L-Serine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000867/simulation_1/bmse000867_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000867/simulation_1/bmse000867-simulation_1.str",
-        ((3.7, 3.88, 4.02),),
-        [(3.7, 4.02);] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000867/simulation_1/bmse000867-simulation_1.str")
     push!(entries, tmp)
     # [2/3; 1.0] # κ.
 
     tmp = GISSMOEntryType("bmse000900",
         "L-Phenylalanine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000900/simulation_1/bmse000900_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000900/simulation_1/bmse000900-simulation_1.str",
-        ((3.0, 3.5, 4.2), (7.2, 7.6)),
-        [(3.0, 4.1); (7.1, 7.6)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000900/simulation_1/bmse000900-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000044",
         "L-Methionine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000044/simulation_1/bmse000044_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000044/simulation_1/bmse000044-simulation_1.str",
-        ((1.9, 3.66, 4.0), (-1.2)),
-        [(1.9, 4.0);] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000044/simulation_1/bmse000044-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000038",
         "L-Glutamine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000038/simulation_1/bmse000038_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000038/simulation_1/bmse000038-simulation_1.str",
-        ((-1.2),),
-        [(1.82, 2.7); (3.6, 3.9)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000038/simulation_1/bmse000038-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000208",
         "L-(+) Lactic acid",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000208/simulation_1/bmse000208_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000208/simulation_1/bmse000208-simulation_1.str",
-        ((1.0, 2.8, 4.4),),
-        [(1.23, 1.4);] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000208/simulation_1/bmse000208-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000015",
         "D-(+)-Glucose",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000015/simulation_1/bmse000015_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000015/simulation_1/bmse000015-simulation_1.str",
-        ((3.0, 3.3, 4.0, 5.0), (3.0, 4.5, 5.5)),
-        [(3.15, 3.96); (4.57, 4.7); (5.16, 5.28)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000015/simulation_1/bmse000015-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000206",
         "Caffeine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000206/simulation_1/bmse000206_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000206/simulation_1/bmse000206-simulation_1.str",
-        ((-1.2), (-1.2), (-1.2), (-1.2)),
-        [(3.1, 3.55); (3.73, 4.0); (7.75, 8.0)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000206/simulation_1/bmse000206-simulation_1.str")
     push!(entries, tmp)
 
     # tmp = GISSMOEntryType("bmse000039",
@@ -167,197 +137,183 @@ function getGISSMOentriesall()::Vector{GISSMOEntryType}
     tmp = GISSMOEntryType("bmse000976",
         "L-Histidine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000976/simulation_1/bmse000976_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000976/simulation_1/bmse000976-simulation_1.str",
-        #((-1.2), (-1.2), (-1.2)),
-        ((3.0, 3.5, 4.2), (6.9, 7.4), (7.8, 8.3)),
-        [(3.0, 3.35); (3.8, 4.17); (6.83, 8.2)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000976/simulation_1/bmse000976-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000947",
         "L-Proline",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000947/simulation_1/bmse000947_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000947/simulation_1/bmse000947-simulation_1.str",
-        ((1.5, 3.7, 4.6),),
-        [(1.85, 2.15); (2.25, 2.42); (3.24, 3.48); (4.05, 4.18) ] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000947/simulation_1/bmse000947-simulation_1.str")
     push!(entries, tmp)
-
-    # tmp = GISSMOEntryType("bmse000285", # 400 MHz.
-    #     "Choline",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000285/simulation_1/bmse000285_simulation_1_nmredata.zip",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000285/simulation_1/bmse000285-simulation_1.str")
-    # push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000953", # 600 MHz.
         "Choline",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000953/simulation_1/bmse000953_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000953/simulation_1/bmse000953-simulation_1.str",
-        ((3.2, 3.8, 4.1), (-1.2)),
-        [(2.97, 3.67); (3.96, 4.16)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000953/simulation_1/bmse000953-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000912",
         "L-Asparagine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000912/simulation_1/bmse000912_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000912/simulation_1/bmse000912-simulation_1.str",
-        ((2.74, 3.5, 4.1),),
-        [(2.68, 3.15); (3.82, 4.16)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000912/simulation_1/bmse000912-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000875",
         "L-Aspartic acid",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000875/simulation_1/bmse000875_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000875/simulation_1/bmse000875-simulation_1.str",
-        ((2.4, 3.4, 4.4),),
-        [(2.5, 3.0); (3.68, 4.06)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000875/simulation_1/bmse000875-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000914",
         "L-Lysine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000914/simulation_1/bmse000914_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000914/simulation_1/bmse000914-simulation_1.str",
-        ((-1.2),),
-        [(1.3, 2.0); (2.95, 3.09); (3.66, 3.83)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000914/simulation_1/bmse000914-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000028",
         "L-Alanine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000028/simulation_1/bmse000028_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000028/simulation_1/bmse000028-simulation_1.str",
-        ((-1.2),),
-        [(1.2, 1.6); (3.57, 3.99)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000028/simulation_1/bmse000028-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000899",
         "L-Arginine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000899/simulation_1/bmse000899_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000899/simulation_1/bmse000899-simulation_1.str",
-        ((-1.2),),
-        [(1.52, 2.05); (3.12, 3.38); (3.65, 3.87)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000899/simulation_1/bmse000899-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000299",
         "Folate",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000299/simulation_1/bmse000299_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000299/simulation_1/bmse000299-simulation_1.str",
-        ((-1.2),(-1.2),(-1.2),(-1.2),(-1.2)),
-        [(1.82, 2.62); (3.62, 4.4); (5.98, 6.46); (7.2, 7.52); (8.25, 8.52)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000299/simulation_1/bmse000299-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000975",
         "L-Cysteine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000975/simulation_1/bmse000975_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000975/simulation_1/bmse000975-simulation_1.str",
-        ((2.9, 3.5, 4.1),),
-        [(2.95, 3.12); (3.86, 4.04)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000975/simulation_1/bmse000975-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000109",
         "Putrescine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000109/simulation_1/bmse000109_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000109/simulation_1/bmse000109-simulation_1.str",
-        ((-1.2),),
-        [(1.56, 1.95); (2.85, 3.24)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000109/simulation_1/bmse000109-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000183",
         "Succinic acid",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000183/simulation_1/bmse000183_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000183/simulation_1/bmse000183-simulation_1.str",
-        ((-1.2),),
-        [(2.22, 2.54);] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000183/simulation_1/bmse000183-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000454",
         "Purine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000454/simulation_1/bmse000454_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000454/simulation_1/bmse000454-simulation_1.str",
-        ((-1.2),(-1.2)),
-        [(8.41, 8.61); (8.7, 9.09)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000454/simulation_1/bmse000454-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000913",
         "L-Glutamic acid",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000913/simulation_1/bmse000913_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000913/simulation_1/bmse000913-simulation_1.str",
-        ((1.9, 3.0, 4.13),),
-        [(1.93, 2.54); (3.61, 3.84)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000913/simulation_1/bmse000913-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000976",
         "Ethanol",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000297/simulation_1/bmse000297_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000297/simulation_1/bmse000297-simulation_1.str",
-        #((-1.2),),
-        ((1.0, 2.5, 4.0),),
-        [(1.0, 1.5); (3.0, 4.0)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000297/simulation_1/bmse000297-simulation_1.str")
     push!(entries, tmp)
 
-    # tmp = GISSMOEntryType("bmse000316",
-    #     "Epinephrine",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000316/simulation_1/bmse000316_simulation_1_nmredata.zip",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000316/simulation_1/bmse000316-simulation_1.str",
-    #     ((3.0, 4.0, 5.2), (-1.2), (-1.2)) )
-    # push!(entries, tmp)
-    #
-    # tmp = GISSMOEntryType("bmse000404",
-    #     "(-)-Norepinephrine",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000404/simulation_1/bmse000404_simulation_1_nmredata.zip",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000404/simulation_1/bmse000404-simulation_1.str",
-    #     ((-1.2), (2.9, 4.0, 5.1)) )
-    # push!(entries, tmp)
-    #
-    # # L-DOPA
-    # tmp = GISSMOEntryType("bmse000322",
-    #     "3,4-Dihydroxy-L-phenylalanine",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000322/simulation_1/bmse000322_simulation_1_nmredata.zip",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000322/simulation_1/bmse000322-simulation_1.str",
-    #     ((-1.2),(-1.2)) )
-    # push!(entries, tmp)
+    tmp = GISSMOEntryType("bmse000316",
+        "Epinephrine",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000316/simulation_1/bmse000316_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000316/simulation_1/bmse000316-simulation_1.str")
+    push!(entries, tmp)
 
-    # tmp = GISSMOEntryType("bmse000933",
-    #     "Dopamine",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000933/simulation_1/bmse000933_simulation_1_nmredata.zip",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000933/simulation_1/bmse000933-simulation_1.str")
-    # push!(entries, tmp)
-    #
-    # tmp = GISSMOEntryType("bmse000457",
-    #     "5-Hydroxy-L-tryptophan",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000457/simulation_1/bmse000457_simulation_1_nmredata.zip",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000457/simulation_1/bmse000457-simulation_1.str")
-    # push!(entries, tmp)
-    #
-    # tmp = GISSMOEntryType("bmse000757",
-    #     "Serotonin",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000757/simulation_1/bmse000757_simulation_1_nmredata.zip",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000757/simulation_1/bmse000757-simulation_1.str")
-    # push!(entries, tmp)
-    #
-    # tmp = GISSMOEntryType("bmse000172",
-    #     "L-Kynurenine",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000172/simulation_1/bmse000172_simulation_1_nmredata.zip",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000172/simulation_1/bmse000172-simulation_1.str")
-    # push!(entries, tmp)
-    #
-    # tmp = GISSMOEntryType("bmse000207",
-    #     "Tryptamine",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000207/simulation_1/bmse000207_simulation_1_nmredata.zip",
-    #     "http://gissmo.nmrfam.wisc.edu/entry/bmse000207/simulation_1/bmse000207-simulation_1.str")
-    # push!(entries, tmp)
+    tmp = GISSMOEntryType("bmse000404",
+        "(-)-Norepinephrine",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000404/simulation_1/bmse000404_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000404/simulation_1/bmse000404-simulation_1.str")
+    push!(entries, tmp)
+
+    # L-DOPA
+    tmp = GISSMOEntryType("bmse000322",
+        "3,4-Dihydroxy-L-phenylalanine",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000322/simulation_1/bmse000322_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000322/simulation_1/bmse000322-simulation_1.str")
+    push!(entries, tmp)
+
+    tmp = GISSMOEntryType("bmse000933",
+        "Dopamine",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000933/simulation_1/bmse000933_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000933/simulation_1/bmse000933-simulation_1.str")
+    push!(entries, tmp)
+
+    tmp = GISSMOEntryType("bmse000457",
+        "5-Hydroxy-L-tryptophan",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000457/simulation_1/bmse000457_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000457/simulation_1/bmse000457-simulation_1.str")
+    push!(entries, tmp)
+
+    tmp = GISSMOEntryType("bmse000757",
+        "Serotonin",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000757/simulation_1/bmse000757_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000757/simulation_1/bmse000757-simulation_1.str")
+    push!(entries, tmp)
+
+    tmp = GISSMOEntryType("bmse000172",
+        "L-Kynurenine",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000172/simulation_1/bmse000172_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000172/simulation_1/bmse000172-simulation_1.str")
+    push!(entries, tmp)
+
+    tmp = GISSMOEntryType("bmse000207",
+        "Tryptamine",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000207/simulation_1/bmse000207_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000207/simulation_1/bmse000207-simulation_1.str")
+    push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000950",
         "Creatine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000950/simulation_1/bmse000950_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000950/simulation_1/bmse000950-simulation_1.str",
-        ((-1.2),(-1.2)),
-        [(2.96, 3.09); (3.85, 3.98)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000950/simulation_1/bmse000950-simulation_1.str")
     push!(entries, tmp)
 
     tmp = GISSMOEntryType("bmse000155",
         "Creatinine",
         "http://gissmo.nmrfam.wisc.edu/entry/bmse000155/simulation_1/bmse000155_simulation_1_nmredata.zip",
-        "http://gissmo.nmrfam.wisc.edu/entry/bmse000155/simulation_1/bmse000155-simulation_1.str",
-        ((-1.2),(-1.2)),
-        [(2.95, 3.1); (3.97, 4.1)] )
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000155/simulation_1/bmse000155-simulation_1.str")
+    push!(entries, tmp)
+
+    tmp = GISSMOEntryType("bmse000901",
+        "Myo-Inositol",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000901/simulation_1/bmse000901_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000901/simulation_1/bmse000901-simulation_1.str")
+    push!(entries, tmp)
+
+    tmp = GISSMOEntryType("bmse000856",
+        "Glycerol",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000856/simulation_1/bmse000856_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000856/simulation_1/bmse000856-simulation_1.str")
+    push!(entries, tmp)
+
+
+    tmp = GISSMOEntryType("bmse000871",
+        "Gamma-Aminobutyric acid",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000871/simulation_1/bmse000871_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000871/simulation_1/bmse000871-simulation_1.str")
+    push!(entries, tmp)
+
+    tmp = GISSMOEntryType("bmse000905",
+        "3-Hydroxybutyrate",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000905/simulation_1/bmse000905_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000905/simulation_1/bmse000905-simulation_1.str")
+    push!(entries, tmp)
+
+    tmp = GISSMOEntryType("bmse000877",
+        "HEPES",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000877/simulation_1/bmse000877_simulation_1_nmredata.zip",
+        "http://gissmo.nmrfam.wisc.edu/entry/bmse000877/simulation_1/bmse000877-simulation_1.str")
     push!(entries, tmp)
 
     # # uses TMS!
