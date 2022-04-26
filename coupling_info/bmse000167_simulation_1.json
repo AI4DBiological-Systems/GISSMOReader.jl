@@ -1,0 +1,19 @@
+{
+       "J-coupling": [
+                       {
+                            "ID2": 12,
+                            "ID1": 11,
+                          "value": 7
+                       }
+                     ],
+   "chemical shift": [
+                       {
+                          "value": 4.325,
+                             "ID": 11
+                       },
+                       {
+                          "value": 4.325,
+                             "ID": 12
+                       }
+                     ]
+}

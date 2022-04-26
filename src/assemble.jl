@@ -45,6 +45,25 @@ function parsemetadatafromNMReDATA(file_strings::Vector{String})
     return H_IDs, H_css
 end
 
+"""
+sample `file_strings`:
+> <NMREDATA_ASSIGNMENT>
+12, 3.21706, 12 \
+13, 3.21706, 13 \
+14, 3.21706, 14 \
+15, 3.21706, 15 \
+16, 3.21706, 16 \
+17, 3.21706, 17 \
+18, 3.21706, 18 \
+19, 3.21706, 19 \
+20, 3.21706, 20 \
+21, 2.40773, 21 \
+22, 2.44334, 22 \
+23, 3.42692, 23 \
+24, 3.41518, 24 \
+25, 4.55775, 25 \
+
+"""
 function parsecssfromNMReDATA(file_strings::Vector{String})
 
     header_string = "> <NMREDATA_ASSIGNMENT>"
@@ -91,7 +110,20 @@ function parsecssfromNMReDATA(file_strings::Vector{String})
     return H_IDs, H_css
 end
 
+"""
+Sample file_string:
+> <NMREDATA_J>
+12, 13, -12.400000 \
+15, 17, -12.400000 \
+18, 20, -12.400000 \
+21, 22, -15.461709 \
+21, 25, 6.477503 \
+22, 25, 7.987374 \
+23, 24, -14.339089 \
+23, 25, 9.203557 \
+24, 25, 2.284200 \
 
+"""
 function parseJsfromNMReDATA(file_strings::Vector{String})
 
     header_string = "> <NMREDATA_J>"
@@ -131,7 +163,6 @@ function parseJsfromNMReDATA(file_strings::Vector{String})
             else
                 record_flag = false
             end
-
         end
 
 

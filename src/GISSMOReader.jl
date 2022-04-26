@@ -7,7 +7,9 @@ import DelimitedFiles
 
 import HTTP
 import JSON3
+import JSON
 
+include("../src/database/download_edata.jl")
 include("../src/database/helpers.jl")
 include("../src/database/BMRB_rest.jl")
 include("../src/database/GISSMO_entries.jl")
