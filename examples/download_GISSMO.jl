@@ -13,7 +13,7 @@ unique_cs_tol = 1e-6
 zero_tol_sigdigits = 6
 
 #JLD_save_folder = "/home/roy/Documents/repo/NMRData/input/compounds"
-coupling_info_folder = "/home/roy/Documents/repo/NMRData/coupling_info"
+coupling_info_folder = "/home/roy/Documents/repo/NMRData/intput/coupling_info"
 edata_save_folder = "/home/roy/MEGAsync/data/NMR/GISSMO_edata"
 
 JSON_folder = "/home/roy/Documents/repo/GISSMOReader.jl/GISSMO_info"
@@ -35,7 +35,7 @@ db_dict = JSON.parse(open(JSON_load_path))
 # simulation_label = split(entry_key, "/")[end]
 # entry_label = split(entry_key, "/")[end-1]
 #
-# coupling_info_folder = "/home/roy/Documents/repo/NMRData/coupling_info"
+# coupling_info_folder = "/home/roy/Documents/repo/NMRData/intput/coupling_info"
 # edata_save_folder = "/home/roy/MEGAsync/data/NMR/GISSMO_edata"
 #
 # GISSMOReader.downloadGISSMOedata(molecule_name,
